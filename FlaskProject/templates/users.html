@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+    <h1>List of Users</h1>
+    <ul>
+        {% for user in users %}
+            <li>{{ user }}</li>
+            <form action="{{ url_for('delete_user', username=user) }}" method="POST" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
